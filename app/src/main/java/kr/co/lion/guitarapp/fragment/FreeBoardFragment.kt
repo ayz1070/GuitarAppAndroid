@@ -35,7 +35,10 @@ class FreeBoardFragment : Fragment() {
         mainActivity = activity as MainActivity
 
         setToolbar()
+        setSearchBar()
         setRecyclerViewFreeBoard()
+        setRecyclerViewSearchFreeBoard()
+
 
         return binding.root
     }
@@ -54,6 +57,23 @@ class FreeBoardFragment : Fragment() {
         }
     }
 
+    fun setSearchBar(){
+        binding.apply{
+            searchBarFreeBoard.apply{
+                // SearchBar에 보여줄 메시지
+                hint = "여기를 눌러 검색해주세요"
+                // 메뉴
+                inflateMenu(R.menu.menu_search_free_board)
+
+            }
+
+            searchViewFreeBoard.apply{
+                // SearchView에 보여줄 메시지
+                hint = "검색어를 입력해주세요"
+            }
+        }
+    }
+
     fun setRecyclerViewFreeBoard(){
         binding.apply {
             recyclerViewFreeBoard.apply {
@@ -67,25 +87,39 @@ class FreeBoardFragment : Fragment() {
             }
         }
     }
+    // 검색 화면의 RecyclerView를 구성하는 메서드
+    fun setRecyclerViewSearchFreeBoard(){
+        binding.apply {
+            recyclerViewSearchFreeBoard.apply {
+                // 어뎁터
+                adapter = RecyclerViewAdapterSearchFreeBoard()
+                // 레이아웃 매니저
+                layoutManager = LinearLayoutManager(mainActivity)
+                // 데코레이션
+                val deco = MaterialDividerItemDecoration(mainActivity, MaterialDividerItemDecoration.VERTICAL)
+                addItemDecoration(deco)
+            }
+        }
+    }
 
     // 메인 화면의 RecyclerView의 어뎁터
-    inner class RecyclerViewAdapterFreeBoard : RecyclerView.Adapter<RecyclerViewAdapterFreeBoard.MainViewHolder>(){
-        inner class MainViewHolder(rowMainBinding: RowFreeBoardBinding) : RecyclerView.ViewHolder(rowMainBinding.root){
-            val rowMainBinding:RowFreeBoardBinding
+    inner class RecyclerViewAdapterFreeBoard : RecyclerView.Adapter<RecyclerViewAdapterFreeBoard.ViewHolderFreeBoard>(){
+        inner class ViewHolderFreeBoard(rowFreeBoardBinding: RowFreeBoardBinding) : RecyclerView.ViewHolder(rowFreeBoardBinding.root){
+            val rowFreeBoardBinding:RowFreeBoardBinding
 
             init {
-                this.rowMainBinding = rowMainBinding
+                this.rowFreeBoardBinding = rowFreeBoardBinding
 
-                this.rowMainBinding.root.layoutParams = ViewGroup.LayoutParams(
+                this.rowFreeBoardBinding.root.layoutParams = ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
             }
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderFreeBoard {
             val rowMainBinding = RowFreeBoardBinding.inflate(layoutInflater)
-            val mainViewHolder = MainViewHolder(rowMainBinding)
+            val mainViewHolder = ViewHolderFreeBoard(rowMainBinding)
             return mainViewHolder
         }
 
@@ -93,9 +127,40 @@ class FreeBoardFragment : Fragment() {
             return 100
         }
 
-        override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-            holder.rowMainBinding.textViewTitleFreeBoardRow.text = "제목 $position"
-            holder.rowMainBinding.textViewNickNameFreeBoardRow.text = "작성자 $position"
+        override fun onBindViewHolder(holder: ViewHolderFreeBoard, position: Int) {
+            holder.rowFreeBoardBinding.textViewTitleFreeBoardRow.text = "제목 $position"
+            holder.rowFreeBoardBinding.textViewNickNameFreeBoardRow.text = "작성자 $position"
+        }
+    }
+
+    // 검색 화면의 RecyclerView의 어뎁터
+    inner class RecyclerViewAdapterSearchFreeBoard : RecyclerView.Adapter<RecyclerViewAdapterSearchFreeBoard.ViewHolderSearchFreeBoard>(){
+        inner class ViewHolderSearchFreeBoard(rowMainBinding: RowFreeBoardBinding) : RecyclerView.ViewHolder(rowMainBinding.root){
+            val rowFreeBoardBinding:RowFreeBoardBinding
+
+            init {
+                this.rowFreeBoardBinding = rowMainBinding
+
+                this.rowFreeBoardBinding.root.layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+            }
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderSearchFreeBoard {
+            val rowMainBinding = RowFreeBoardBinding.inflate(layoutInflater)
+            val searchViewHolder = ViewHolderSearchFreeBoard(rowMainBinding)
+            return searchViewHolder
+        }
+
+        override fun getItemCount(): Int {
+            return 100
+        }
+
+        override fun onBindViewHolder(holder: ViewHolderSearchFreeBoard, position: Int) {
+            holder.rowFreeBoardBinding.textViewTitleFreeBoardRow.text = "제목 $position"
+            holder.rowFreeBoardBinding.textViewNickNameFreeBoardRow.text = "작성자 $position"
         }
     }
 
