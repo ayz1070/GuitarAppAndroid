@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.transition.MaterialSharedAxis
 import kr.co.lion.guitarapp.databinding.ActivityMainBinding
+import kr.co.lion.guitarapp.fragment.AddBoardFragment
 import kr.co.lion.guitarapp.fragment.FreeBoardFragment
 import kr.co.lion.guitarapp.util.MainFragmentName
 
@@ -52,6 +53,9 @@ class MainActivity : AppCompatActivity() {
         when(name){
             MainFragmentName.FREE_BOARD_FRAGMENT -> {
                 newFragment = FreeBoardFragment()
+            }
+            MainFragmentName.ADD_BOARD_FRAGMENT -> {
+                newFragment = AddBoardFragment()
             }
 
         }

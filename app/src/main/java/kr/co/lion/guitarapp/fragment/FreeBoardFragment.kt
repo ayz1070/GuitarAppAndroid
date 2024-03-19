@@ -14,6 +14,7 @@ import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.ActivityMainBinding
 import kr.co.lion.guitarapp.databinding.FragmentFreeBoardBinding
 import kr.co.lion.guitarapp.databinding.RowFreeBoardBinding
+import kr.co.lion.guitarapp.util.MainFragmentName
 import kr.co.lion.guitarapp.viewmodel.FreeBoardViewModel
 
 
@@ -52,6 +53,15 @@ class FreeBoardFragment : Fragment() {
                 setNavigationIcon(R.drawable.ic_arrow_back_24)
                 setNavigationOnClickListener {
                     // 백버튼 클릭 이벤트
+                }
+                inflateMenu(R.menu.menu_free_board)
+                setOnMenuItemClickListener {
+                    when(it.itemId){
+                        R.id.menuItemAddFreeBoard -> {
+                            mainActivity.replaceFragment(MainFragmentName.ADD_BOARD_FRAGMENT,true,true,null)
+                        }
+                    }
+                    true
                 }
             }
         }
