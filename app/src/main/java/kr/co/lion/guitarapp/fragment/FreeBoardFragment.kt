@@ -140,6 +140,10 @@ class FreeBoardFragment : Fragment() {
         override fun onBindViewHolder(holder: ViewHolderFreeBoard, position: Int) {
             holder.rowFreeBoardBinding.textViewTitleFreeBoardRow.text = "제목 $position"
             holder.rowFreeBoardBinding.textViewNickNameFreeBoardRow.text = "작성자 $position"
+
+            holder.rowFreeBoardBinding.root.setOnClickListener {
+                mainActivity.replaceFragment(MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT,true,true,null)
+            }
         }
     }
 

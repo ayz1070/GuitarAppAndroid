@@ -1,4 +1,6 @@
 package kr.co.lion.guitarapp.viewmodel
 
-class FreeBoardViewModel {
+import androidx.lifecycle.ViewModel
+
+class FreeBoardViewModel:ViewModel() {
 }

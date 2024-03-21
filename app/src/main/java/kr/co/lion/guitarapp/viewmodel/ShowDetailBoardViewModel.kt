@@ -2,5 +2,5 @@ package kr.co.lion.guitarapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 
-class AddBoardViewModel:ViewModel() {
+class ShowDetailBoardViewModel: ViewModel() {
 }

@@ -18,6 +18,7 @@ import androidx.databinding.DataBindingUtil
 import kr.co.lion.guitarapp.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentAddBoardBinding
+import kr.co.lion.guitarapp.util.MainFragmentName
 import kr.co.lion.guitarapp.util.Util
 import kr.co.lion.guitarapp.viewmodel.AddBoardViewModel
 
@@ -60,7 +61,7 @@ class AddBoardFragment : Fragment() {
                 setNavigationIcon(R.drawable.ic_arrow_back_24)
                 // 백버튼 이벤트
                 setNavigationOnClickListener{
-
+                    mainActivity.removeFragment(MainFragmentName.ADD_BOARD_FRAGMENT)
                 }
                 inflateMenu(R.menu.menu_add_board)
 
