@@ -128,6 +128,7 @@ enum class MainFragmentName(var str:String){
     FREE_BOARD_FRAGMENT("FreeBoardFragment"),
     ADD_BOARD_FRAGMENT("AddBoardFragment"),
     SHOW_DETAIL_BOARD_FRAGMENT("ShowDetailBoardFragment"),
+    MODIFY_BOARD_FRAGMENT("ModifyBoardFragment"),
 //    MY_PAGE_FRAGMENT(),
 //    MODIFY_PROFILE_FRAGMENT(),
 //    CHECK_ATTENDANCE_FRAGMENT(),

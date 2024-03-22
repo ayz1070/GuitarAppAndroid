@@ -12,6 +12,7 @@ import com.google.android.material.transition.MaterialSharedAxis
 import kr.co.lion.guitarapp.databinding.ActivityMainBinding
 import kr.co.lion.guitarapp.fragment.AddBoardFragment
 import kr.co.lion.guitarapp.fragment.FreeBoardFragment
+import kr.co.lion.guitarapp.fragment.ModifyBoardFragment
 import kr.co.lion.guitarapp.fragment.ShowDetailBoardFragment
 import kr.co.lion.guitarapp.util.MainFragmentName
 
@@ -60,6 +61,9 @@ class MainActivity : AppCompatActivity() {
             }
             MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT -> {
                 newFragment = ShowDetailBoardFragment()
+            }
+            MainFragmentName.MODIFY_BOARD_FRAGMENT -> {
+                newFragment = ModifyBoardFragment()
             }
 
         }

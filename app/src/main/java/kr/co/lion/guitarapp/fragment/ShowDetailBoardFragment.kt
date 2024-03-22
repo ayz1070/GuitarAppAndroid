@@ -11,6 +11,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kr.co.lion.guitarapp.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentShowDetailBoardBinding
+import kr.co.lion.guitarapp.util.MainFragmentName
 import kr.co.lion.guitarapp.viewmodel.ShowDetailBoardViewModel
 
 
@@ -45,6 +46,7 @@ class ShowDetailBoardFragment : Fragment() {
                 setNavigationIcon(R.drawable.ic_arrow_back_24)
                 setNavigationOnClickListener {
                     // 백버튼 클릭 이벤트
+                    mainActivity.removeFragment(MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT)
                 }
 
                 inflateMenu(R.menu.menu_show_detail_board)
@@ -53,7 +55,7 @@ class ShowDetailBoardFragment : Fragment() {
                     when(it.itemId){
                         // 수정 아이콘 클릭 시
                         R.id.menuItemModifyShowDetailBoard -> {
-
+                            mainActivity.replaceFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT,true,true,null)
                         }
 
                         // 삭제 아이콘 클릭 시
