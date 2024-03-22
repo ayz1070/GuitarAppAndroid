@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kr.co.lion.guitarapp.MainActivity
 import kr.co.lion.guitarapp.R
@@ -35,8 +36,15 @@ class ShowDetailBoardFragment : Fragment() {
 
         setToolbar()
 
+        binding.buttonTest.setOnClickListener {
+            showBottomCommentSheet()
+        }
+
+
+
         return binding.root
     }
+
 
     // 툴바 설정
     fun setToolbar(){
@@ -82,5 +90,13 @@ class ShowDetailBoardFragment : Fragment() {
             }
             show()
         }
+    }
+
+    fun showBottomCommentSheet(){
+
+        val bottomCommentFragment = BottomCommentFragment()
+        bottomCommentFragment.show(mainActivity.supportFragmentManager, "BottomCommentSheet")
+
+
     }
 }
