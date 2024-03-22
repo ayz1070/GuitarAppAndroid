@@ -1,11 +1,13 @@
 package kr.co.lion.guitarapp.fragment
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kr.co.lion.guitarapp.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentShowDetailBoardBinding
@@ -49,11 +51,34 @@ class ShowDetailBoardFragment : Fragment() {
 
                 setOnMenuItemClickListener {
                     when(it.itemId){
+                        // 수정 아이콘 클릭 시
+                        R.id.menuItemModifyShowDetailBoard -> {
 
+                        }
+
+                        // 삭제 아이콘 클릭 시
+                        R.id.menuItemDeleteShowDetailBoard -> {
+                            setDeleteDialog()
+                        }
                     }
                     true
                 }
             }
+        }
+    }
+
+    fun setDeleteDialog(){
+        val materialAlertDialogBuilder = MaterialAlertDialogBuilder(requireContext())
+        materialAlertDialogBuilder.apply{
+            setTitle("삭제")
+            setMessage("정말로 삭제하시겠습니까?")
+            setPositiveButton("삭제"){ dialogInterface: DialogInterface, i: Int ->
+
+            }
+            setNegativeButton("닫기"){ dialogInterface: DialogInterface, i: Int ->
+
+            }
+            show()
         }
     }
 }
