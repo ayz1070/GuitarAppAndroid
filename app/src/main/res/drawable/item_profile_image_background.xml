@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#C0C0C0" /> <!-- 배경 색상을 원하는 색으로 변경하세요 -->
+    <corners android:radius="75dp" /> <!-- 원하는 둥근 정도를 radius 값으로 조정하세요 -->
+</shape>

@@ -49,4 +49,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // 추가
+    implementation ("de.hdodenhof:circleimageview:3.1.0") //Circle ImageView
 }

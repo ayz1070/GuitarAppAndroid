@@ -129,9 +129,10 @@ enum class MainFragmentName(var str:String){
     ADD_BOARD_FRAGMENT("AddBoardFragment"),
     SHOW_DETAIL_BOARD_FRAGMENT("ShowDetailBoardFragment"),
     MODIFY_BOARD_FRAGMENT("ModifyBoardFragment"),
+    CHECK_ATTENDANCE_FRAGMENT("CheckAttendacneFragment"),
 //    MY_PAGE_FRAGMENT(),
 //    MODIFY_PROFILE_FRAGMENT(),
-//    CHECK_ATTENDANCE_FRAGMENT(),
+
 
 //    EDIT_BOARD_FRAGMENT(),
 }
