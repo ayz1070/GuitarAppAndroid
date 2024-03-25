@@ -29,9 +29,35 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,false,false,null)
+        setBottomNavigation()
 
         setContentView(binding.root)
 
+    }
+
+    fun setBottomNavigation(){
+        binding.apply{
+            bottomNavigationBasic.apply{
+                setOnItemSelectedListener {
+                    when(it.itemId){
+                        R.id.menu_item_home_main_bottom -> {
+                            replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,true,true,null)
+
+                        }
+                        R.id.menu_item_check_main_bottom -> {
+                            replaceFragment(MainFragmentName.CHECK_ATTENDANCE_FRAGMENT,true,true,null)
+
+                        }
+                        R.id.menu_item_my_page_main_bottom -> {
+                            // 마이페이지 구현 시
+                            // replaceFragment(true,true,null)
+                        }
+                    }
+
+                    true
+                }
+            }
+        }
     }
 
     // 지정한 Fragment를 보여주는 메서드
@@ -91,6 +117,7 @@ class MainActivity : AppCompatActivity() {
 
                 // MaterialSharedAxis : 좌우, 위아래, 공중 바닥 사이로 이동하는 애니메이션 효과
                 // X - 좌우
+
                 // Y - 위아래
                 // Z - 공중 바닥
                 // 두 번째 매개변수 : 새로운 화면이 나타나는 것인지 여부를 설정해준다.

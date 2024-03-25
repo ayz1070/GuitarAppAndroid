@@ -61,14 +61,12 @@
                             android:orientation="horizontal">
 
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/imageViewProfileAddCheckAttendanceAttend"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                            <Button
+                                android:id="@+id/buttonAttendCheckAttendance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/add_24px"
-                                app:civ_border_color="#000000"
-                                app:civ_border_width="3dp" />
+                                android:text="출석" />
 
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/recyclerViewCheckAttendanceAttend"
@@ -96,14 +94,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/imageViewProfileAddCheckAttendanceNotAttend"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+
+                            <Button
+                                android:id="@+id/buttonNotAttendCheckAttendance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginTop="25dp"
-                                android:src="@drawable/add_24px"
-                                app:civ_border_color="#000000"
-                                app:civ_border_width="3dp" />
+                                android:text="결석" />
 
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/recyclerViewCheckAttendanceNotAttend"
