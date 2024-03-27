@@ -1,9 +1,8 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.freeboard.fragment
 
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
-import android.media.MediaActionSound
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -15,12 +14,12 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import kr.co.lion.guitarapp.MainActivity
+import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentAddBoardBinding
 import kr.co.lion.guitarapp.util.MainFragmentName
 import kr.co.lion.guitarapp.util.Util
-import kr.co.lion.guitarapp.viewmodel.AddBoardViewModel
+import kr.co.lion.guitarapp.ui.freeboard.viewmodel.AddBoardViewModel
 
 class AddBoardFragment : Fragment() {
     lateinit var binding: FragmentAddBoardBinding

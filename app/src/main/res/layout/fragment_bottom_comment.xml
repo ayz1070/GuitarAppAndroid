@@ -7,7 +7,7 @@
 
         <variable
             name="bottomCommentViewModel"
-            type="kr.co.lion.guitarapp.viewmodel.BottomCommentViewModel" />
+            type="kr.co.lion.guitarapp.ui.freeboard.viewmodel.BottomCommentViewModel" />
     </data>
 
     <LinearLayout

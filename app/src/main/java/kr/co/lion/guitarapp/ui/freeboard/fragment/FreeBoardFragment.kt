@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.freeboard.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,20 +9,19 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.divider.MaterialDividerItemDecoration
-import kr.co.lion.guitarapp.MainActivity
+import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
-import kr.co.lion.guitarapp.databinding.ActivityMainBinding
 import kr.co.lion.guitarapp.databinding.FragmentFreeBoardBinding
 import kr.co.lion.guitarapp.databinding.RowFreeBoardBinding
 import kr.co.lion.guitarapp.util.MainFragmentName
-import kr.co.lion.guitarapp.viewmodel.FreeBoardViewModel
+import kr.co.lion.guitarapp.ui.freeboard.viewmodel.FreeBoardViewModel
 
 
 class FreeBoardFragment : Fragment() {
 
     lateinit var binding:FragmentFreeBoardBinding
     lateinit var mainActivity: MainActivity
-    lateinit var freeBoardViewModel:FreeBoardViewModel
+    lateinit var freeBoardViewModel: FreeBoardViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

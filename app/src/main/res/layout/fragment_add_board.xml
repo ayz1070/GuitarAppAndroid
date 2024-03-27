@@ -7,7 +7,7 @@
     <data>
         <variable
             name="addBoardViewModel"
-            type="kr.co.lion.guitarapp.viewmodel.AddBoardViewModel" />
+            type="kr.co.lion.guitarapp.ui.freeboard.viewmodel.AddBoardViewModel" />
     </data>
 
     <LinearLayout

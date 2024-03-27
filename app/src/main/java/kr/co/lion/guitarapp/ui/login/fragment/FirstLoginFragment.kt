@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.login.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import kr.co.lion.guitarapp.LoginActivity
+import kr.co.lion.guitarapp.ui.login.LoginActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentFirstLoginBinding
 import kr.co.lion.guitarapp.util.LoginFragmentName
-import kr.co.lion.guitarapp.viewmodel.FirstLoginViewModel
+import kr.co.lion.guitarapp.ui.login.viewmodel.FirstLoginViewModel
 
 
 class FirstLoginFragment : Fragment() {
     lateinit var firstLoginViewModel: FirstLoginViewModel
 
     lateinit var binding:FragmentFirstLoginBinding
-    lateinit var loginActivity:LoginActivity
+    lateinit var loginActivity: LoginActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

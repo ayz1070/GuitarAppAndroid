@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.login.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import kr.co.lion.guitarapp.LoginActivity
+import kr.co.lion.guitarapp.ui.login.LoginActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentInputProfileBinding
-import kr.co.lion.guitarapp.viewmodel.InputProfileViewModel
+import kr.co.lion.guitarapp.ui.login.viewmodel.InputProfileViewModel
 
 
 class InputProfileFragment : Fragment() {

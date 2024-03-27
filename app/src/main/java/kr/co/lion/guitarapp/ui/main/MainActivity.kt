@@ -1,42 +1,61 @@
-package kr.co.lion.guitarapp
+package kr.co.lion.guitarapp.ui.main
 
 import android.os.Bundle
 import android.os.SystemClock
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.transition.MaterialSharedAxis
-import kr.co.lion.guitarapp.databinding.ActivityLoginBinding
-import kr.co.lion.guitarapp.fragment.FirstLoginFragment
-import kr.co.lion.guitarapp.fragment.InputProfileFragment
-import kr.co.lion.guitarapp.util.LoginFragmentName
-import kr.co.lion.guitarapp.viewmodel.LoginActivityViewModel
+import kr.co.lion.guitarapp.R
+import kr.co.lion.guitarapp.databinding.ActivityMainBinding
+import kr.co.lion.guitarapp.ui.freeboard.fragment.AddBoardFragment
+import kr.co.lion.guitarapp.ui.freeboard.fragment.CheckAttendanceFragment
+import kr.co.lion.guitarapp.ui.freeboard.fragment.FreeBoardFragment
+import kr.co.lion.guitarapp.ui.freeboard.fragment.ModifyBoardFragment
+import kr.co.lion.guitarapp.ui.freeboard.fragment.ShowDetailBoardFragment
+import kr.co.lion.guitarapp.util.MainFragmentName
 
-class LoginActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+    lateinit var binding:ActivityMainBinding
 
-    // 프래그먼트 객체를 담을 변수
+    // 프래그먼트의 주소값을 담을 프로퍼티
     var oldFragment: Fragment? = null
     var newFragment: Fragment? = null
 
-    lateinit var loginActivityViewModel: LoginActivityViewModel
-    lateinit var binding: ActivityLoginBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
-        binding = DataBindingUtil.inflate(layoutInflater,R.layout.activity_login,null,false)
-        loginActivityViewModel = LoginActivityViewModel()
+        replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,false,false,null)
+        setBottomNavigation()
 
-        binding.loginActivityViewModel = loginActivityViewModel
-        binding.lifecycleOwner = this
-
-        replaceFragment(LoginFragmentName.FIRST_LOGIN_FRAGMENT,false,false,null)
         setContentView(binding.root)
 
+    }
+
+    fun setBottomNavigation(){
+        binding.apply{
+            bottomNavigationBasic.apply{
+                setOnItemSelectedListener {
+                    when(it.itemId){
+                        R.id.menu_item_home_main_bottom -> {
+                            replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,true,true,null)
+
+                        }
+                        R.id.menu_item_check_main_bottom -> {
+                            replaceFragment(MainFragmentName.CHECK_ATTENDANCE_FRAGMENT,true,true,null)
+
+                        }
+                        R.id.menu_item_my_page_main_bottom -> {
+                            // 마이페이지 구현 시
+                            // replaceFragment(true,true,null)
+                        }
+                    }
+
+                    true
+                }
+            }
+        }
     }
 
     // 지정한 Fragment를 보여주는 메서드
@@ -44,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
     // addToBackStack : BackStack에 포함 시킬 것인지
     // isAnimate : 애니메이션을 보여줄 것인지
     // data : 새로운 프래그먼트에 전달할 값이 담겨져 있는 Bundle 객체
-    fun replaceFragment(name:LoginFragmentName, addToBackStack:Boolean, isAnimate:Boolean, data:Bundle?){
+    fun replaceFragment(name:MainFragmentName, addToBackStack:Boolean, isAnimate:Boolean, data:Bundle?){
 
         SystemClock.sleep(200)
 
@@ -59,17 +78,22 @@ class LoginActivity : AppCompatActivity() {
         // 이름으로 분기한다.
         // Fragment의 객체를 생성하여 변수에 담아준다.
         when(name){
-            LoginFragmentName.FIRST_LOGIN_FRAGMENT -> {
-                newFragment = FirstLoginFragment()
+            MainFragmentName.FREE_BOARD_FRAGMENT -> {
+                newFragment = FreeBoardFragment()
+            }
+            MainFragmentName.ADD_BOARD_FRAGMENT -> {
+                newFragment = AddBoardFragment()
+            }
+            MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT -> {
+                newFragment = ShowDetailBoardFragment()
+            }
+            MainFragmentName.MODIFY_BOARD_FRAGMENT -> {
+                newFragment = ModifyBoardFragment()
+            }
+            MainFragmentName.CHECK_ATTENDANCE_FRAGMENT -> {
+                newFragment = CheckAttendanceFragment()
             }
 
-            LoginFragmentName.INPUT_PROFILE_FRAGMENT -> {
-                newFragment = InputProfileFragment()
-            }
-
-            LoginFragmentName.INPUT_IMAGE_FRAGMENT -> {
-
-            }
         }
 
         // 새로운 Fragment에 전달할 객체가 있다면 arguments 프로퍼티에 넣어준다.
@@ -91,6 +115,7 @@ class LoginActivity : AppCompatActivity() {
 
                 // MaterialSharedAxis : 좌우, 위아래, 공중 바닥 사이로 이동하는 애니메이션 효과
                 // X - 좌우
+
                 // Y - 위아래
                 // Z - 공중 바닥
                 // 두 번째 매개변수 : 새로운 화면이 나타나는 것인지 여부를 설정해준다.
@@ -119,7 +144,7 @@ class LoginActivity : AppCompatActivity() {
             // Fragment를 교체한다.(이전 Fragment가 없으면 새롭게 추가하는 역할을 수행한다)
             // 첫 번째 매개 변수 : Fragment를 배치할 FragmentContainerView의 ID
             // 두 번째 매개 변수 : 보여주고하는 Fragment 객체를
-            fragmentTransaction.replace(R.id.fragmentContainerLogin, newFragment!!)
+            fragmentTransaction.replace(R.id.fragmentContainerFreeBoard, newFragment!!)
 
             // addToBackStack 변수의 값이 true면 새롭게 보여질 Fragment를 BackStack에 포함시켜 준다.
             if(addToBackStack == true){
@@ -132,7 +157,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     // BackStack에서 Fragment를 제거한다.
-    fun removeFragment(name:LoginFragmentName){
+    fun removeFragment(name:MainFragmentName){
         SystemClock.sleep(200)
 
         // 지정한 이름으로 있는 Fragment를 BackStack에서 제거한다.

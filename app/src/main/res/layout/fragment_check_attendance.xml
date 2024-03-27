@@ -6,14 +6,14 @@
     <data>
         <variable
             name="checkAttendanceViewModel"
-            type="kr.co.lion.guitarapp.viewmodel.CheckAttendanceViewModel" />
+            type="kr.co.lion.guitarapp.ui.checkAttendance.viewmodel.CheckAttendanceViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".fragment.CheckAttendanceFragment">
+        tools:context=".ui.freeboard.fragment.CheckAttendanceFragment">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarCheckAttendance"

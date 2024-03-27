@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.viewmodel
+package kr.co.lion.guitarapp.ui.checkAttendance.viewmodel
 
 import androidx.lifecycle.ViewModel
 

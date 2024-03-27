@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.freeboard.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import kr.co.lion.guitarapp.MainActivity
+import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentModifyBoardBinding
 import kr.co.lion.guitarapp.util.MainFragmentName
-import kr.co.lion.guitarapp.viewmodel.ModifyBoardViewModel
+import kr.co.lion.guitarapp.ui.freeboard.viewmodel.ModifyBoardViewModel
 
 
 class ModifyBoardFragment : Fragment() {

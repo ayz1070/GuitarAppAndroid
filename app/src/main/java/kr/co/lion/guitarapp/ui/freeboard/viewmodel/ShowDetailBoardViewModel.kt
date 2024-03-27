@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.viewmodel
+package kr.co.lion.guitarapp.ui.freeboard.viewmodel
 
 import androidx.lifecycle.ViewModel
 

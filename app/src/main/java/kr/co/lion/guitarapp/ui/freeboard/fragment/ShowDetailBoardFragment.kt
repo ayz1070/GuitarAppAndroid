@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.freeboard.fragment
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -7,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kr.co.lion.guitarapp.MainActivity
+import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentShowDetailBoardBinding
 import kr.co.lion.guitarapp.util.MainFragmentName
-import kr.co.lion.guitarapp.viewmodel.ShowDetailBoardViewModel
+import kr.co.lion.guitarapp.ui.freeboard.viewmodel.ShowDetailBoardViewModel
 
 
 class ShowDetailBoardFragment : Fragment() {

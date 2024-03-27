@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.fragment
+package kr.co.lion.guitarapp.ui.freeboard.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kr.co.lion.guitarapp.MainActivity
+import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentCheckAttendanceBinding
 import kr.co.lion.guitarapp.databinding.RowCheckBinding
-import kr.co.lion.guitarapp.viewmodel.CheckAttendanceViewModel
+import kr.co.lion.guitarapp.ui.checkAttendance.viewmodel.CheckAttendanceViewModel
 
 class CheckAttendanceFragment : Fragment() {
 
