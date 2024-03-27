@@ -23,6 +23,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
 
+
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -61,10 +63,19 @@
 
                 <ImageView
                     android:id="@+id/imageViewPhotoAddBoard"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/add_24px" />
+                    app:srcCompat="@drawable/ic_photo_library_24px" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPhotosAddBoard"
+                    android:layout_width="300dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp" />
+
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

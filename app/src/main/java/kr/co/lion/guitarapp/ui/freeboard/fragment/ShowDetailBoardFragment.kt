@@ -7,17 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.carousel.CarouselLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentShowDetailBoardBinding
+import kr.co.lion.guitarapp.databinding.RowShowDetailBoardBinding
 import kr.co.lion.guitarapp.util.MainFragmentName
 import kr.co.lion.guitarapp.ui.freeboard.viewmodel.ShowDetailBoardViewModel
 
 
 class ShowDetailBoardFragment : Fragment() {
 
-    lateinit var binding:FragmentShowDetailBoardBinding
+    lateinit var binding: FragmentShowDetailBoardBinding
     lateinit var mainActivity: MainActivity
 
     lateinit var showDetailBoardViewModel: ShowDetailBoardViewModel
@@ -26,7 +29,8 @@ class ShowDetailBoardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_show_detail_board,container,false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_show_detail_board,container,false)
         showDetailBoardViewModel = ShowDetailBoardViewModel()
         binding.showDetailBoardViewModel = showDetailBoardViewModel
         binding.lifecycleOwner = this
@@ -34,16 +38,34 @@ class ShowDetailBoardFragment : Fragment() {
         mainActivity = activity as MainActivity
 
         setToolbar()
+        setCarousel()
 
-        binding.buttonTest.setOnClickListener {
+
+        binding.includeBottomCommentShowDetailBoard.root.setOnClickListener {
             showBottomCommentSheet()
         }
+
+
 
 
 
         return binding.root
     }
 
+    fun setCarousel(){
+        binding.apply{
+            // RecyclerView 셋팅
+            recyclerViewPhotosShowDetailBoard.apply{
+                // 어댑터
+                adapter = RecyclerViewAdapterShowDetailBoard()
+                // 레이아웃 매니저
+                layoutManager = CarouselLayoutManager()
+                // layoutManager = CarouselLayoutManager(MultiBrowseCarouselStrategy())
+                // layoutManager = CarouselLayoutManager(HeroCarouselStrategy())
+                // layoutManager = CarouselLayoutManager(FullScreenCarouselStrategy())
+            }
+        }
+    }
 
     // 툴바 설정
     fun setToolbar(){
@@ -95,7 +117,27 @@ class ShowDetailBoardFragment : Fragment() {
 
         val bottomCommentFragment = BottomCommentFragment()
         bottomCommentFragment.show(mainActivity.supportFragmentManager, "BottomCommentSheet")
+    }
 
+    inner class RecyclerViewAdapterShowDetailBoard: RecyclerView.Adapter<RecyclerViewAdapterShowDetailBoard.ViewHolderShowDetailBoard>() {
+        inner class ViewHolderShowDetailBoard(rowShowDetailBoardBinding: RowShowDetailBoardBinding): RecyclerView.ViewHolder(rowShowDetailBoardBinding.root){
+            val rowShowDetailBoardBinding: RowShowDetailBoardBinding
 
+            init{
+                this.rowShowDetailBoardBinding = rowShowDetailBoardBinding
+            }
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderShowDetailBoard {
+            val rowShowDetailBoardBinding = RowShowDetailBoardBinding.inflate(layoutInflater)
+            val viewHolderAddBoard = ViewHolderShowDetailBoard(rowShowDetailBoardBinding)
+            return viewHolderAddBoard
+        }
+
+        override fun getItemCount(): Int = 5
+
+        override fun onBindViewHolder(holder: ViewHolderShowDetailBoard, position: Int) {
+            holder.rowShowDetailBoardBinding.imageViewCarouselShowDetailBoard.setImageResource(R.drawable.img_dog)
+        }
     }
 }

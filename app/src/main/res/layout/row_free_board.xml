@@ -31,8 +31,9 @@
             android:text="작성자"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewContentFreeBoardRow" />
+            app:layout_constraintStart_toEndOf="@+id/textViewLikeFreeBoardRow"
+            app:layout_constraintTop_toBottomOf="@+id/textViewContentFreeBoardRow"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/imageViewPhotoFreeBoardRow"
@@ -67,6 +68,28 @@
             android:text="내용"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTitleFreeBoardRow" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewContentFreeBoardRow"
+            app:srcCompat="@drawable/ic_thumb_up_24px" />
+
+        <TextView
+            android:id="@+id/textViewLikeFreeBoardRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:text="0"
+            android:textColor="#FF0000"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewContentFreeBoardRow" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

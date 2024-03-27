@@ -27,36 +27,35 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,false,false,null)
-        setBottomNavigation()
 
         setContentView(binding.root)
 
     }
 
-    fun setBottomNavigation(){
-        binding.apply{
-            bottomNavigationBasic.apply{
-                setOnItemSelectedListener {
-                    when(it.itemId){
-                        R.id.menu_item_home_main_bottom -> {
-                            replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,true,true,null)
-
-                        }
-                        R.id.menu_item_check_main_bottom -> {
-                            replaceFragment(MainFragmentName.CHECK_ATTENDANCE_FRAGMENT,true,true,null)
-
-                        }
-                        R.id.menu_item_my_page_main_bottom -> {
-                            // 마이페이지 구현 시
-                            // replaceFragment(true,true,null)
-                        }
-                    }
-
-                    true
-                }
-            }
-        }
-    }
+//    fun setBottomNavigation(){
+//        binding.apply{
+//            bottomNavigationBasic.apply{
+//                setOnItemSelectedListener {
+//                    when(it.itemId){
+//                        R.id.menu_item_home_main_bottom -> {
+//                            replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,true,true,null)
+//
+//                        }
+//                        R.id.menu_item_check_main_bottom -> {
+//                            replaceFragment(MainFragmentName.CHECK_ATTENDANCE_FRAGMENT,true,true,null)
+//
+//                        }
+//                        R.id.menu_item_my_page_main_bottom -> {
+//                            // 마이페이지 구현 시
+//                            // replaceFragment(true,true,null)
+//                        }
+//                    }
+//
+//                    true
+//                }
+//            }
+//        }
+//    }
 
     // 지정한 Fragment를 보여주는 메서드
     // name : 프래그먼트 이름
