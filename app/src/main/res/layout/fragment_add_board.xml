@@ -13,7 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:transitionGroup="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarAddBoard"
@@ -22,7 +23,6 @@
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" />
-
 
 
         <ScrollView

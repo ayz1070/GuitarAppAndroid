@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.freeboard.fragment.CheckAttendanceFragment">
+        android:transitionGroup="true"
+        tools:context=".ui.checkAttendance.fragment.CheckAttendanceFragment">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbarCheckAttendance"
@@ -128,7 +129,7 @@
                         <RadioGroup
                             android:id="@+id/radioGroupAttendance"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
                 </ScrollView>

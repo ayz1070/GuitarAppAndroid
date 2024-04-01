@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.ui.freeboard.fragment
+package kr.co.lion.guitarapp.ui.checkAttendance.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,19 +12,20 @@ import kr.co.lion.guitarapp.ui.main.MainActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentCheckAttendanceBinding
 import kr.co.lion.guitarapp.databinding.RowCheckBinding
+import kr.co.lion.guitarapp.ui.checkAttendance.AttendanceActivity
 import kr.co.lion.guitarapp.ui.checkAttendance.viewmodel.CheckAttendanceViewModel
 
 class CheckAttendanceFragment : Fragment() {
 
     lateinit var binding:FragmentCheckAttendanceBinding
-    lateinit var mainActivity: MainActivity
+    lateinit var attendanceActivity: AttendanceActivity
     lateinit var checkAttendanceViewModel: CheckAttendanceViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        mainActivity = activity as MainActivity
+        attendanceActivity = activity as AttendanceActivity
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_check_attendance, container, false)
         checkAttendanceViewModel = CheckAttendanceViewModel()
@@ -43,12 +44,12 @@ class CheckAttendanceFragment : Fragment() {
         binding.apply{
             recyclerViewCheckAttendanceAttend.apply{
                 adapter = RecyclerViewAdapterCheckAttend()
-                layoutManager = LinearLayoutManager(mainActivity,
+                layoutManager = LinearLayoutManager(attendanceActivity,
                     LinearLayoutManager.HORIZONTAL,false)
             }
             recyclerViewCheckAttendanceNotAttend.apply{
                 adapter = RecyclerViewAdapterCheckNotAttend()
-                layoutManager = LinearLayoutManager(mainActivity,
+                layoutManager = LinearLayoutManager(attendanceActivity,
                     LinearLayoutManager.HORIZONTAL,false)
             }
 

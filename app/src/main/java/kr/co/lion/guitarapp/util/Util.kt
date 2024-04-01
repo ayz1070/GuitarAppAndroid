@@ -130,9 +130,8 @@ enum class MainFragmentName(var str:String){
     SHOW_DETAIL_BOARD_FRAGMENT("ShowDetailBoardFragment"),
     MODIFY_BOARD_FRAGMENT("ModifyBoardFragment"),
     CHECK_ATTENDANCE_FRAGMENT("CheckAttendacneFragment"),
-//    MY_PAGE_FRAGMENT(),
-//    MODIFY_PROFILE_FRAGMENT(),
+}
 
-
-//    EDIT_BOARD_FRAGMENT(),
+enum class AttendanceFragmentName(var str:String){
+    CHECK_ATTENDANCE_FRAGMENT("CheckAttendanceFragment"),
 }

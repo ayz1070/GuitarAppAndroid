@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common -->
+    <dimen name="layout_padding">10dp</dimen>
+    <dimen name="layout_margin_end">10dp</dimen>
+    <dimen name="layout_margin_top">10dp</dimen>
+    <dimen name="layout_margin_bottom">10dp</dimen>
+    <dimen name="resource_margin_top">10dp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+
+    <!-- edittext -->
+    <dimen name="edittext_height_board_title">70dp</dimen>
+    <dimen name="edittext_height_board_content">250dp</dimen>
+    <dimen name="edittext_margin_top">10dp</dimen>
+    <dimen name="edittext_height_comment">50dp</dimen>
+
+    <!-- carousel -->
+    <dimen name="carousel_margin_top_add_board">50dp</dimen>
+    <dimen name="carousel_width_add_board">300dp</dimen>
+    <dimen name="carousel_height_add_add_board">250dp</dimen>
+    <dimen name="carousel_container_width_small">150dp</dimen>
+    <dimen name="carousel_container_height_small">150dp</dimen>
+    <dimen name="carousel_container_width_large">150dp</dimen>
+    <dimen name="carousel_container_height_large">260dp</dimen>
+    <dimen name="carousel_container_margin_start">4dp</dimen>
+    <dimen name="carousel_container_margin_end">4dp</dimen>
+    <dimen name="carousel_container_padding">10dp</dimen>
+
+    <!-- icon -->
+    <dimen name="icon_width_add_board">40dp</dimen>
+    <dimen name="icon_height_add_board">40dp</dimen>
+    <dimen name="icon_width_send_bottom_comment">35dp</dimen>
+    <dimen name="icon_height_send_bottom_comment">35dp</dimen>
+    <dimen name="icon_thumb_up_height">15dp</dimen>
+    <dimen name="icon_thumb_up_width">15dp</dimen>
+    <dimen name="icon_comment_width">15dp</dimen>
+    <dimen name="icon_comment_height">15dp</dimen>
+
+    <!-- recyclerView -->
+    <dimen name="recyclerview_margin_top_free_board">80dp</dimen>
+    <dimen name="recyclerview_height_modify_board">400dp</dimen>
+
+    <!-- profile -->
+    <dimen name="profile_imageview_width">40dp</dimen>
+    <dimen name="profile_imageview_height">40dp</dimen>
+    <dimen name="profile_text_size_date">10sp</dimen>
+    <dimen name="profile_date_margin_top">10dp</dimen>
+    <dimen name="profile_layout_padding">10dp</dimen>
+    <dimen name="profile_text_size_nickname">14sp</dimen>
+
+    <!-- board -->
+    <dimen name="board_text_title_size">18sp</dimen>
+    <dimen name="board_text_content_size">14sp</dimen>
+    <dimen name="board_content_margin_top">5dp</dimen>
+    <dimen name="board_text_like_margin_start">3dp</dimen>
+    <dimen name="board_text_margin_start">10dp</dimen>
+
+    <!-- close -->
+    <dimen name="item_close_radius">30dp</dimen>
+    <dimen name="item_close_margin_top">10dp</dimen>
+    <dimen name="item_close_margin_right">10dp</dimen>
+
+    <dimen name="close_width">20dp</dimen>
+    <dimen name="close_height">20dp</dimen>
+
+    <!-- search bar -->
+    <dimen name="search_bar_height">50dp</dimen>
+
+    <!-- comment -->
+    <dimen name="comment_nickname_margin_top">15dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
