@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import kr.co.lion.guitarapp.ui.main.MainActivity
+import kr.co.lion.guitarapp.ui.freeboard.BoardActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentModifyBoardBinding
 import kr.co.lion.guitarapp.util.MainFragmentName
@@ -15,7 +15,7 @@ import kr.co.lion.guitarapp.ui.freeboard.viewmodel.ModifyBoardViewModel
 
 class ModifyBoardFragment : Fragment() {
     lateinit var binding:FragmentModifyBoardBinding
-    lateinit var mainActivity: MainActivity
+    lateinit var boardActivity: BoardActivity
 
     lateinit var modifyBoardViewModel: ModifyBoardViewModel
 
@@ -24,7 +24,7 @@ class ModifyBoardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        mainActivity = activity as MainActivity
+        boardActivity = activity as BoardActivity
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_modify_board,container,false)
         modifyBoardViewModel = ModifyBoardViewModel()
@@ -43,14 +43,14 @@ class ModifyBoardFragment : Fragment() {
 
             setNavigationIcon(R.drawable.ic_arrow_back_24)
             setNavigationOnClickListener {
-                mainActivity.removeFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT)
+                boardActivity.removeFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT)
             }
             inflateMenu(R.menu.menu_modify_board)
             setOnMenuItemClickListener {
                 when(it.itemId){
                     // 수정 완료 아이콘 클릭 이벤트
                     R.id.menuCompleteModifyBoard -> {
-                        mainActivity.removeFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT)
+                        boardActivity.removeFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT)
                     }
                 }
                 true

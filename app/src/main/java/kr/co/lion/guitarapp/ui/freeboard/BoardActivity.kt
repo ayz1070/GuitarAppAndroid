@@ -1,4 +1,4 @@
-package kr.co.lion.guitarapp.ui.main
+package kr.co.lion.guitarapp.ui.freeboard
 
 import android.os.Bundle
 import android.os.SystemClock
@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.transition.MaterialSharedAxis
 import kr.co.lion.guitarapp.R
-import kr.co.lion.guitarapp.databinding.ActivityMainBinding
+import kr.co.lion.guitarapp.databinding.ActivityBoardBinding
 import kr.co.lion.guitarapp.ui.freeboard.fragment.AddBoardFragment
 import kr.co.lion.guitarapp.ui.checkAttendance.fragment.CheckAttendanceFragment
 import kr.co.lion.guitarapp.ui.freeboard.fragment.FreeBoardFragment
@@ -15,8 +15,8 @@ import kr.co.lion.guitarapp.ui.freeboard.fragment.ModifyBoardFragment
 import kr.co.lion.guitarapp.ui.freeboard.fragment.ShowDetailBoardFragment
 import kr.co.lion.guitarapp.util.MainFragmentName
 
-class MainActivity : AppCompatActivity() {
-    lateinit var binding:ActivityMainBinding
+class BoardActivity : AppCompatActivity() {
+    lateinit var binding:ActivityBoardBinding
 
     // 프래그먼트의 주소값을 담을 프로퍼티
     var oldFragment: Fragment? = null
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityBoardBinding.inflate(layoutInflater)
 
         replaceFragment(MainFragmentName.FREE_BOARD_FRAGMENT,false,false,null)
 

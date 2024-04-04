@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.divider.MaterialDividerItemDecoration
-import kr.co.lion.guitarapp.ui.main.MainActivity
+import kr.co.lion.guitarapp.ui.freeboard.BoardActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentFreeBoardBinding
 import kr.co.lion.guitarapp.databinding.RowFreeBoardBinding
@@ -20,7 +20,7 @@ import kr.co.lion.guitarapp.ui.freeboard.viewmodel.FreeBoardViewModel
 class FreeBoardFragment : Fragment() {
 
     lateinit var binding:FragmentFreeBoardBinding
-    lateinit var mainActivity: MainActivity
+    lateinit var boardActivity: BoardActivity
     lateinit var freeBoardViewModel: FreeBoardViewModel
 
     override fun onCreateView(
@@ -32,7 +32,7 @@ class FreeBoardFragment : Fragment() {
         binding.freeBoardViewModel = freeBoardViewModel
         binding.lifecycleOwner = this
 
-        mainActivity = activity as MainActivity
+        boardActivity = activity as BoardActivity
 
         setToolbar()
         setSearchBar()
@@ -57,7 +57,7 @@ class FreeBoardFragment : Fragment() {
                 setOnMenuItemClickListener {
                     when(it.itemId){
                         R.id.menuItemAddFreeBoard -> {
-                            mainActivity.replaceFragment(MainFragmentName.ADD_BOARD_FRAGMENT,true,true,null)
+                            boardActivity.replaceFragment(MainFragmentName.ADD_BOARD_FRAGMENT,true,true,null)
                         }
                     }
                     true
@@ -89,9 +89,9 @@ class FreeBoardFragment : Fragment() {
                 // 어뎁터
                 adapter = RecyclerViewAdapterFreeBoard()
                 // 레이아웃 매니저
-                layoutManager = LinearLayoutManager(mainActivity)
+                layoutManager = LinearLayoutManager(boardActivity)
                 // 데코레이션
-                val deco = MaterialDividerItemDecoration(mainActivity, MaterialDividerItemDecoration.VERTICAL)
+                val deco = MaterialDividerItemDecoration(boardActivity, MaterialDividerItemDecoration.VERTICAL)
                 addItemDecoration(deco)
             }
         }
@@ -103,9 +103,9 @@ class FreeBoardFragment : Fragment() {
                 // 어뎁터
                 adapter = RecyclerViewAdapterSearchFreeBoard()
                 // 레이아웃 매니저
-                layoutManager = LinearLayoutManager(mainActivity)
+                layoutManager = LinearLayoutManager(boardActivity)
                 // 데코레이션
-                val deco = MaterialDividerItemDecoration(mainActivity, MaterialDividerItemDecoration.VERTICAL)
+                val deco = MaterialDividerItemDecoration(boardActivity, MaterialDividerItemDecoration.VERTICAL)
                 addItemDecoration(deco)
             }
         }
@@ -141,7 +141,7 @@ class FreeBoardFragment : Fragment() {
             holder.rowFreeBoardBinding.textViewNickNameFreeBoardRow.text = "작성자 $position"
 
             holder.rowFreeBoardBinding.root.setOnClickListener {
-                mainActivity.replaceFragment(MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT,true,true,null)
+                boardActivity.replaceFragment(MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT,true,true,null)
             }
         }
     }

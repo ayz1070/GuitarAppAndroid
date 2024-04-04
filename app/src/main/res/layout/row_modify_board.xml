@@ -2,9 +2,9 @@
 <com.google.android.material.carousel.MaskableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/containerCarouselAddBoard"
+    android:id="@+id/containerCarouselModifyBoard"
     android:layout_width="@dimen/carousel_container_width_small"
-    android:layout_height="@dimen/carousel_container_height_small"
+    android:layout_height="@dimen/carousel_container_height_large"
     android:layout_marginStart="@dimen/carousel_container_margin_start"
     android:layout_marginEnd="@dimen/carousel_container_margin_end"
     android:foreground="?attr/selectableItemBackground"
@@ -12,13 +12,13 @@
     app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
 
     <ImageView
-        android:id="@+id/imageViewCarouselAddBoard"
+        android:id="@+id/imageViewCarouselModifyBoard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
     <ImageButton
-        android:id="@+id/buttonCloseRowAddBoard"
+        android:id="@+id/buttonCloseRowModifyBoard"
         android:layout_width="@dimen/close_width"
         android:layout_height="@dimen/close_height"
         android:layout_gravity="right"

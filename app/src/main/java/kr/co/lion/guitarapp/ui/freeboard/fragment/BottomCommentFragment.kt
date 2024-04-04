@@ -13,7 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.divider.MaterialDividerItemDecoration
-import kr.co.lion.guitarapp.ui.main.MainActivity
+import kr.co.lion.guitarapp.ui.freeboard.BoardActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentBottomCommentBinding
 import kr.co.lion.guitarapp.databinding.RowCommentBinding
@@ -23,14 +23,14 @@ import kr.co.lion.guitarapp.ui.freeboard.viewmodel.BottomCommentViewModel
 class BottomCommentFragment : BottomSheetDialogFragment() {
 
     lateinit var binding:FragmentBottomCommentBinding
-    lateinit var mainActivity: MainActivity
+    lateinit var boardActivity: BoardActivity
 
     lateinit var bottomCommentViewModel: BottomCommentViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        mainActivity = activity as MainActivity
+        boardActivity = activity as BoardActivity
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_bottom_comment, container, false)
         bottomCommentViewModel = BottomCommentViewModel()
@@ -47,10 +47,10 @@ class BottomCommentFragment : BottomSheetDialogFragment() {
             recyclerViewCommentBottomComment.apply{
                 // 어댑터
                 adapter = RecyclerViewAdapterBottomComment()
-                layoutManager = LinearLayoutManager(mainActivity)
+                layoutManager = LinearLayoutManager(boardActivity)
 
                 // 데코레이션
-                val deco = MaterialDividerItemDecoration(mainActivity, MaterialDividerItemDecoration.VERTICAL)
+                val deco = MaterialDividerItemDecoration(boardActivity, MaterialDividerItemDecoration.VERTICAL)
                 addItemDecoration(deco)
             }
         }
@@ -128,7 +128,7 @@ class BottomCommentFragment : BottomSheetDialogFragment() {
         // 화면 크기 정보를 담을 배열 객체
         val displayMetrics = DisplayMetrics()
         // 액정의 가로 세로 길이 정보를 담아준다.
-        mainActivity.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        boardActivity.windowManager.defaultDisplay.getMetrics(displayMetrics)
         // 세로길이를 반환해준다.
         return displayMetrics.heightPixels
     }

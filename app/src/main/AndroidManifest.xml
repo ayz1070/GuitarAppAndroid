@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GuitarApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.checkAttendance.AttendanceActivity"
             android:exported="false"
             android:theme="@style/Theme.GuitarApp" />
@@ -29,10 +32,8 @@
             android:name=".ui.login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:name=".ui.freeboard.BoardActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

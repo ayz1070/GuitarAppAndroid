@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.carousel.CarouselLayoutManager
-import kr.co.lion.guitarapp.ui.main.MainActivity
+import kr.co.lion.guitarapp.ui.freeboard.BoardActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentAddBoardBinding
 import kr.co.lion.guitarapp.databinding.RowAddBoardBinding
@@ -26,7 +26,7 @@ import kr.co.lion.guitarapp.ui.freeboard.viewmodel.AddBoardViewModel
 
 class AddBoardFragment : Fragment() {
     lateinit var binding: FragmentAddBoardBinding
-    lateinit var mainActivity: MainActivity
+    lateinit var boardActivity: BoardActivity
 
     lateinit var addBoardViewModel: AddBoardViewModel
 
@@ -46,7 +46,7 @@ class AddBoardFragment : Fragment() {
         binding.addBoardViewModel = addBoardViewModel
         binding.lifecycleOwner = this
 
-        mainActivity = activity as MainActivity
+        boardActivity = activity as BoardActivity
 
         setToolbar()
         setCarousel()
@@ -79,7 +79,7 @@ class AddBoardFragment : Fragment() {
                 setNavigationIcon(R.drawable.ic_arrow_back_24)
                 // 백버튼 이벤트
                 setNavigationOnClickListener{
-                    mainActivity.removeFragment(MainFragmentName.ADD_BOARD_FRAGMENT)
+                    boardActivity.removeFragment(MainFragmentName.ADD_BOARD_FRAGMENT)
                 }
                 inflateMenu(R.menu.menu_add_board)
 
@@ -119,12 +119,12 @@ class AddBoardFragment : Fragment() {
                 if(uri != null){
                     val bitmap = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
                         // 이미지를 생성할 수 있는 객체를 생성한다.
-                        val source = ImageDecoder.createSource(mainActivity.contentResolver, uri)
+                        val source = ImageDecoder.createSource(boardActivity.contentResolver, uri)
                         // Bitmap을 생성한다.
                         ImageDecoder.decodeBitmap(source)
                     }else{
                         // 컨텐츠 프로바이더를 통해 이미지 데이터에 접근한다.
-                        val cursor = mainActivity.contentResolver.query(uri, null,null,null,null)
+                        val cursor = boardActivity.contentResolver.query(uri, null,null,null,null)
                         if(cursor!= null){
                             cursor.moveToNext()
 
@@ -140,7 +140,7 @@ class AddBoardFragment : Fragment() {
                     }
 
                     // 회전 각도값을 가져온다.
-                    val degree = Util.getDegree(mainActivity, uri)
+                    val degree = Util.getDegree(boardActivity, uri)
                     // 회전 이미지를 가져온다.
                     val bitmap2 = Util.rotateBitmap(bitmap!!, degree.toFloat())
                     // 크기를 줄인 이미지를 가져온다.

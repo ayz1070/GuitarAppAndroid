@@ -14,19 +14,20 @@
 
         <ImageView
             android:id="@+id/imageViewProfileCommentRow"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/profile_imageview_width"
+            android:layout_height="@dimen/profile_imageview_height"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textViewNickNameBottomCommentRow"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="@dimen/comment_nickname_margin_top"
             android:text="닉네임"
-            android:textSize="10sp"
+            android:textSize="@dimen/text_size_small"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -41,13 +42,54 @@
             android:layout_marginTop="10dp"
             android:text="내용" />
 
-        <TextView
-            android:id="@+id/textViewDateBottomCommentRow"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="날짜"
-            android:textSize="10sp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewDateBottomCommentRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="날짜"
+                android:textSize="@dimen/text_size_small" />
+
+            <ImageView
+                android:id="@+id/imageViewLikeCommentRow"
+                android:layout_width="@dimen/icon_thumb_up_width"
+                android:layout_height="@dimen/icon_thumb_up_width"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/ic_thumb_up_24px" />
+
+            <TextView
+                android:id="@+id/textViewLikeCommentRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/board_text_like_margin_start"
+                android:layout_marginTop="10dp"
+                android:text="0"
+                android:textColor="#FF0000"
+                android:textSize="@dimen/text_size_small" />
+
+            <ImageView
+                android:id="@+id/imageViewChatRowComment"
+                android:layout_width="@dimen/icon_comment_width"
+                android:layout_height="@dimen/icon_comment_width"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/ic_chat_bubble_24px" />
+
+            <ImageView
+                android:id="@+id/imageViewDeleteRowComment"
+                android:layout_width="@dimen/icon_comment_width"
+                android:layout_height="@dimen/icon_comment_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:foregroundGravity="right"
+                app:srcCompat="@drawable/ic_delete_24px" />
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>

@@ -25,6 +25,7 @@
             android:theme="?attr/actionBarTheme" />
 
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -33,50 +34,66 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="@dimen/shared_layout_padding">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="제목을 입력해주세요"
+                    android:layout_height="@dimen/edittext_height_board_title"
+                    android:hint="@string/hint_input_title"
                     app:endIconMode="clear_text">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextTitleAddBoard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:id="@+id/divider5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:hint="내용을 입력해주세요">
+                    android:layout_marginTop="@dimen/edittext_margin_top"
+                    android:hint="@string/hint_input_content">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextContentAddBoard"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text" />
+                        android:layout_height="@dimen/edittext_height_board_content"
+                        android:background="@android:color/transparent"
+                        android:gravity="start|top"
+                        android:inputType="text|textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:id="@+id/divider6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <ImageView
                     android:id="@+id/imageViewPhotoAddBoard"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="@dimen/icon_width_add_board"
+                    android:layout_height="@dimen/icon_height_add_board"
+                    android:layout_marginTop="@dimen/resource_margin_top"
                     app:srcCompat="@drawable/ic_photo_library_24px" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewPhotosAddBoard"
-                    android:layout_width="300dp"
-                    android:layout_height="250dp"
+                    android:layout_width="@dimen/carousel_width_add_board"
+                    android:layout_height="@dimen/carousel_height_add_add_board"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp" />
+                    android:layout_marginTop="@dimen/carousel_margin_top_add_board" />
 
 
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 </layout>
+

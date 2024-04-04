@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_color_yellow">#ffea9f</color>
+    <color name="button_close_white">#70FFFFFF</color>
+    <color name="app_main_color">#ffea9f</color>
+    <color name="chat_count_red">#E10B0B</color>
 </resources>

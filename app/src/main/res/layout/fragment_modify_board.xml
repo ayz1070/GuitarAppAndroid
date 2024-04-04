@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="@dimen/layout_padding">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -43,28 +43,42 @@
                         android:id="@+id/editTextTitleModifyBoard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:id="@+id/divider9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/layout_margin_top"
                     android:hint="내용을 입력해주세요">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextContentModifyBoard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text" />
+                        android:background="@android:color/transparent"
+                        android:inputType="text|textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:id="@+id/imageViewPhotoModifyBoard"
+                <View
+                    android:id="@+id/divider10"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/add_24px" />
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPhotosModifyBoard"
+                    android:layout_width="@dimen/carousel_width_add_board"
+                    android:layout_height="@dimen/recyclerview_height_modify_board"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/layout_margin_top" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

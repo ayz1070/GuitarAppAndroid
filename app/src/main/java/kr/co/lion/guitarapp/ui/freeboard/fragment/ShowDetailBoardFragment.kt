@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.carousel.CarouselLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kr.co.lion.guitarapp.ui.main.MainActivity
+import kr.co.lion.guitarapp.ui.freeboard.BoardActivity
 import kr.co.lion.guitarapp.R
 import kr.co.lion.guitarapp.databinding.FragmentShowDetailBoardBinding
 import kr.co.lion.guitarapp.databinding.RowShowDetailBoardBinding
@@ -21,7 +21,7 @@ import kr.co.lion.guitarapp.ui.freeboard.viewmodel.ShowDetailBoardViewModel
 class ShowDetailBoardFragment : Fragment() {
 
     lateinit var binding: FragmentShowDetailBoardBinding
-    lateinit var mainActivity: MainActivity
+    lateinit var boardActivity: BoardActivity
 
     lateinit var showDetailBoardViewModel: ShowDetailBoardViewModel
 
@@ -35,21 +35,21 @@ class ShowDetailBoardFragment : Fragment() {
         binding.showDetailBoardViewModel = showDetailBoardViewModel
         binding.lifecycleOwner = this
 
-        mainActivity = activity as MainActivity
+        boardActivity = activity as BoardActivity
 
         setToolbar()
         setCarousel()
-
-
-        binding.includeBottomCommentShowDetailBoard.root.setOnClickListener {
-            showBottomCommentSheet()
-        }
-
-
-
-
+        setCommentButton()
 
         return binding.root
+    }
+
+    fun setCommentButton(){
+        binding.apply{
+            imageViewCommentShowDetailBoard.setOnClickListener {
+                showBottomCommentSheet()
+            }
+        }
     }
 
     fun setCarousel(){
@@ -75,7 +75,7 @@ class ShowDetailBoardFragment : Fragment() {
                 setNavigationIcon(R.drawable.ic_arrow_back_24)
                 setNavigationOnClickListener {
                     // 백버튼 클릭 이벤트
-                    mainActivity.removeFragment(MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT)
+                    boardActivity.removeFragment(MainFragmentName.SHOW_DETAIL_BOARD_FRAGMENT)
                 }
 
                 inflateMenu(R.menu.menu_show_detail_board)
@@ -84,7 +84,7 @@ class ShowDetailBoardFragment : Fragment() {
                     when(it.itemId){
                         // 수정 아이콘 클릭 시
                         R.id.menuItemModifyShowDetailBoard -> {
-                            mainActivity.replaceFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT,true,true,null)
+                            boardActivity.replaceFragment(MainFragmentName.MODIFY_BOARD_FRAGMENT,true,true,null)
                         }
 
                         // 삭제 아이콘 클릭 시
@@ -116,7 +116,7 @@ class ShowDetailBoardFragment : Fragment() {
     fun showBottomCommentSheet(){
 
         val bottomCommentFragment = BottomCommentFragment()
-        bottomCommentFragment.show(mainActivity.supportFragmentManager, "BottomCommentSheet")
+        bottomCommentFragment.show(boardActivity.supportFragmentManager, "BottomCommentSheet")
     }
 
     inner class RecyclerViewAdapterShowDetailBoard: RecyclerView.Adapter<RecyclerViewAdapterShowDetailBoard.ViewHolderShowDetailBoard>() {
