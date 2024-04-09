@@ -111,8 +111,8 @@ class CheckAttendanceFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ViewHolderCheckAttend, position: Int) {
             // 이미지는 테스트용
-            holder.rowCheckBinding.imageViewProfileCheckRow.setImageResource(R.drawable.ic_my_page_24px)
-            holder.rowCheckBinding.textViewNameCheckRow.text = "안영준"
+            holder.rowCheckBinding.imageViewProfileCheckRow.setImageResource(R.drawable.img_dog)
+            holder.rowCheckBinding.textViewNameCheckRow.text = "강아지"
         }
     }
 
@@ -143,8 +143,8 @@ class CheckAttendanceFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ViewHolderCheckNotAttend, position: Int) {
             // 이미지는 테스트용
-            holder.rowCheckBinding.imageViewProfileCheckRow.setImageResource(R.drawable.ic_my_page_24px)
-            holder.rowCheckBinding.textViewNameCheckRow.text = "양승국"
+            holder.rowCheckBinding.imageViewProfileCheckRow.setImageResource(R.drawable.img_jch)
+            holder.rowCheckBinding.textViewNameCheckRow.text = "손흥민"
 
         }
     }

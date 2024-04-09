@@ -1,5 +1,9 @@
 package kr.co.lion.guitarapp.util
 
+
+class SettingUtil{
+
+}
 enum class SettingFragmentName(var str:String){
-    MAIN_SETTING_FRAGMENT("MainSettingFragment"),
+    SETTING_MAIN_FRAGMENT("SettingMainFragment"),
 }

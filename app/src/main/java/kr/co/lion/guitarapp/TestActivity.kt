@@ -7,6 +7,7 @@ import kr.co.lion.guitarapp.databinding.ActivityTestBinding
 import kr.co.lion.guitarapp.ui.checkAttendance.AttendanceActivity
 import kr.co.lion.guitarapp.ui.freeboard.BoardActivity
 import kr.co.lion.guitarapp.ui.login.LoginActivity
+import kr.co.lion.guitarapp.ui.setting.SettingActivity
 
 class TestActivity : AppCompatActivity() {
     lateinit var binding:ActivityTestBinding
@@ -27,6 +28,11 @@ class TestActivity : AppCompatActivity() {
 
         binding.buttonTest3.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonTest4.setOnClickListener {
+            val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
         }
 
